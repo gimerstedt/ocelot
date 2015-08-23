@@ -2,7 +2,6 @@ image-name = ocelot
 container-name = $(image-name)
 
 build:
-	go build ocelot.go
 	docker build -t $(image-name) .
 
 run:
