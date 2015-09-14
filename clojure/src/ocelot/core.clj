@@ -14,6 +14,7 @@
 		[:title "hej"]
 		[:img {:id "ocelot" :alt "ocelot, clearly" :width 640 :height 420 :src "/ocelot.jpg"}]
 		[:p "nothing to see here at the moment." [:br] "except for the ever so lovely ocelot obviously."]
+		[:p [:em [:small "this page was served with ring clojure"]]]
 		[:div {:id "meep"} "meep."]
 		[:div {:id "boop"} "boop."]
 		(str "\n<!-- \"Inside every cynical person, there is a disappointed idealist.\" - George Carlin -->\n")))
@@ -39,4 +40,4 @@
 						(content-type "text/plain")
 						(status 404))))))
 
-(run-jetty handler {:port 8888})
+(run-jetty handler {:port 80})

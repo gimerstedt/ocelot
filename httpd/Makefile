@@ -1,4 +1,4 @@
-image-name = ocelot-golang
+image-name = ocelot-httpd
 container-name = $(image-name)
 
 build:
@@ -9,7 +9,7 @@ run:
 	-d \
 	--restart=always \
 	--name $(container-name) \
-	-p 80:80 \
+	-p 83:80 \
 	$(container-name)
 
 stoprm:
