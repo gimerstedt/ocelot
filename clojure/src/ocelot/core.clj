@@ -14,7 +14,7 @@
 		[:title "hej"]
 		[:img {:id "ocelot" :alt "ocelot, clearly" :width 640 :height 420 :src "/ocelot.jpg"}]
 		[:p "nothing to see here at the moment." [:br] "except for the ever so lovely ocelot obviously."]
-		[:p [:em [:small "this page was served with ring clojure."]]]
+		[:p [:em [:small "this page was served with ring clojure via jetty."]]]
 		[:div {:id "meep"} "meep."]
 		[:div {:id "boop"} "boop."]
 		(str "\n<!-- \"Inside every cynical person, there is a disappointed idealist.\" - George Carlin -->\n")))
