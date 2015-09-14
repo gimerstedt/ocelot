@@ -1,5 +1,5 @@
-image-name = ocelot-httpd
-container-name = $(image-name)
+image-name = ake1/ocelot:httpd
+container-name = ocelot-httpd
 
 build:
 	docker build -t $(image-name) .
@@ -9,14 +9,4 @@ run:
 	-d \
 	--restart=always \
 	--name $(container-name) \
-	-p 83:80 \
-	$(container-name)
-
-stoprm:
-	-docker stop $(container-name)
-	-docker rm $(container-name)
-
-exec:
-	docker exec -it $(container-name) /bin/bash
-
-iter: stoprm build run
+	$(image-name)

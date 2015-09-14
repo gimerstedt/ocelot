@@ -1,24 +1,13 @@
+names = "httpd" "nginx" "clojure" "golang" "haproxy"
+
 run:
-	docker run --name ocelot-httpd \
-	-d \
-	ake1/ocelot:httpd
-	docker run --name ocelot-nginx \
-	-d \
-	ake1/ocelot:nginx
-	docker run --name ocelot-clojure \
-	-d \
-	ake1/ocelot:clojure
-	docker run --name ocelot-golang \
-	-d \
-	ake1/ocelot:golang
+	$(foreach name, $(names), make -C $(name) run;)
+
+pull:
+	$(foreach name, $(names), docker pull ake1/ocelot:$(name);)
 
 stop:
-	docker stop ocelot-httpd ocelot-nginx ocelot-clojure ocelot-golang
+	$(foreach name, $(names), docker stop ocelot-$(name);)
 
 rm:
-	docker rm ocelot-httpd ocelot-nginx ocelot-clojure ocelot-golang
-
-proxy:
-	docker run --name ocelot-haproxy \
-	-d \
-	ake1/ocelot:haproxy
+	$(foreach name, $(names), docker rm ocelot-$(name);)

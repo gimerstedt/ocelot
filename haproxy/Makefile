@@ -1,5 +1,5 @@
-image-name = ocelot-haproxy
-container-name = $(image-name)
+image-name = ake1/ocelot:haproxy
+container-name = ocelot-haproxy
 
 build:
 	docker build -t $(image-name) .
@@ -13,13 +13,4 @@ run:
 	--link ocelot-clojure:ocelot-clojure \
 	--link ocelot-nginx:ocelot-nginx \
 	--link ocelot-httpd:ocelot-httpd \
-	$(container-name)
-
-stoprm:
-	-docker stop $(container-name)
-	-docker rm $(container-name)
-
-exec:
-	docker exec -it $(container-name) /bin/bash
-
-iter: stoprm build run
+	$(image-name)
