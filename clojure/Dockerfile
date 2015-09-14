@@ -1,4 +1,5 @@
-FROM clojure
-COPY . /usr/src/app
-WORKDIR /usr/src/app
-CMD ["lein", "run"]
+from clojure
+maintainer rickard@gimerstedt.se
+copy . /usr/src/app
+workdir /usr/src/app
+cmd ["lein", "run"]

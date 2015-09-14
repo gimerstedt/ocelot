@@ -9,7 +9,7 @@ run:
 	-d \
 	--restart=always \
 	--name $(container-name) \
-	-p 80:8888 \
+	-p 80:80 \
 	$(container-name)
 
 stoprm:
