@@ -36,5 +36,5 @@ func main() {
 	http.HandleFunc("/", handlePage)
 	http.HandleFunc("/style.css", handleCss)
 	http.HandleFunc("/ocelot.jpg", handleImage)
-	http.ListenAndServe(":8088", nil)
+	http.ListenAndServe(":80", nil)
 }
